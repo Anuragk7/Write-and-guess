@@ -1,19 +1,25 @@
 .canvas {
   display: flex;
 }
-.bar {
+.bar-container{
 
   display: flex;
   flex-direction: row;
-  align-items: end;
-  justify-content: space-between;
-  margin: 5rem;
-  padding-top: 2rem;
 }
-.bars{
+.bar {
   background-color: aqua;
   width: 2rem;
   min-width: 1rem;
   border: 1px white solid;
+  margin: 1%
 
+}
+.bars-label {
+  display: flex;
+  flex-direction: row;
+}
+.canvas{
+  height: 280px;
+  width: 280px;
+  margin: auto;
 }

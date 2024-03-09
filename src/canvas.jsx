@@ -22,18 +22,24 @@ export default function Canvas(props) {
       console.log(imgurl)
     }
    
+
     return (<>
-    <div className='canvas'>
+    <div>
+
+    </div>
+    <div className='flex flex-col m-4'>
     <ReactSketchCanvas
       ref = {canvas}
         style={styles}
-       
-        strokeWidth={4}
-        strokeColor="red"
+        strokeWidth={30}
+        strokeColor="black"
         onChange={handlechange}
+        height={280}
+        width={280}
       />
-      <button onClick={onclear}>Clear</button>
+      <button onClick={onclear} className='text-cyan-600' >Clear</button>
     </div>
+    
    
     
     </>
