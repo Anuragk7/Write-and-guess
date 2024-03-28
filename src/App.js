@@ -1,6 +1,6 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import * as tf from '@tensorflow/tfjs'
+import axios from 'axios';
 
 
 import Result from './Result';
@@ -9,23 +9,19 @@ function App() {
 
   const [res,setres] = useState([0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1,0.1])
   const [imgurl, setimgurl] = useState(null)
-  const [model,setmodel] = useState(null)
-  const [image,setImage] = useState(null)
   const canvas = document.createElement('canvas');
   const context = canvas.getContext('2d');
 
 
-  
-  
-  useEffect(() => {
+  async function send (){
+    const response = await axios.post('http://127.0.0.1:8000/predict', {"base64url": imgurl})
+    setres(response.data[0])
+    console.log(response.data[0])
     
-    let nimg = new Image()
-    nimg.src = imgurl
-    nimg.onload = ()=>{
-      setImage(nimg)
-    }
-  }, [imgurl]);
-
+  }
+  
+ 
+// useEffect (() => {send()}, [imgurl])
  
 
 
@@ -40,9 +36,9 @@ function App() {
       </h1>
      <div className='flex justify-around items-center mt-2 flex-wrap p-6 '>
      <Canvas setimgurl = {setimgurl} className = "m-auto"/>
-     <Result res = {res} model = {model}  />
+     <Result res = {res}  />
      </div>
-    
+     <button onClick={send} className='text-cyan-600 text-center' >Predict</button>
      
     </div>
   );

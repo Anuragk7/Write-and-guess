@@ -2,18 +2,19 @@
   display: flex;
 }
 .bar-container{
-
+  justify-content: center;
+  align-items: center;
   display: flex;
   flex-direction: row;
 }
-.bar {
-  background-color: aqua;
-  width: 2rem;
-  min-width: 1rem;
-  border: 1px white solid;
-  margin: 1%
+.bara {
+
+ 
+  transition: all 2s;
+  width: 90%;
 
 }
+
 .bars-label {
   display: flex;
   flex-direction: row;

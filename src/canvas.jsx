@@ -19,7 +19,7 @@ export default function Canvas(props) {
         let a = prev
         return (imgurl)
       }) 
-      console.log(imgurl)
+      
     }
    
 
@@ -38,6 +38,7 @@ export default function Canvas(props) {
         width={280}
       />
       <button onClick={onclear} className='text-cyan-600' >Clear</button>
+     
     </div>
     
    
