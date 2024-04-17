@@ -5,13 +5,13 @@
         "src": "app.py",
         "use": "@vercel/python",
         "config": {
-          "python-version": "3.9"
+          "python-version": "3.11"
         }
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/",
         "dest": "/app.py"
       }
     ]
