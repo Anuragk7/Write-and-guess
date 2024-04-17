@@ -62,4 +62,5 @@ def index():
 if __name__ == '__main__':
     # Specify your desired port here
     port = 8000
-    app.run(debug=True, port=port)
+    #app.run(debug=True, port=port)
+    
